@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import AuthenticationLayout from './components/authentication/authLayout';
-import LoginAuthenticate from './pages/authentication/authLogin';
-import RegisterAuthenticate from './pages/authentication/authRegister';
+import LoginAuthenticate from './pages/authentication/loginAuthenticate';
+import RegisterAuthenticate from './pages/authentication/regiterAuthenticate';
 import AdministrationLayout from './components/administration/adminLayout';
 import AdminOrders from './pages/administration/adminOrders';
 import AdminProducts from './pages/administration/adminProducts';

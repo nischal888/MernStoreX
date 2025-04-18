@@ -1,4 +1,4 @@
-import GenericForm from '@/components/shared/genericForm';
+import GenericForm from '@/components/shared/GenericForm';
 import { useState } from 'react';
 import { loginForm } from '@/config';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const LoginAuthenticate = () => {
           Login in to your account
         </h1>
         <p className="mt-2">
-          Don't have an account
+          Do not have an account?
           <Link
             className="font-medium ml-2 text-primary hover:underline"
             to="/auth/register"

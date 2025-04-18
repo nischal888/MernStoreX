@@ -1,19 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import AuthenticationLayout from './components/authentication/authLayout';
-import LoginAuthenticate from './pages/authentication/loginAuthenticate';
-import RegisterAuthenticate from './pages/authentication/regiterAuthenticate';
-import AdministrationLayout from './components/administration/adminLayout';
-import AdminOrders from './pages/administration/adminOrders';
-import AdminProducts from './pages/administration/adminProducts';
-import AdminDashboard from './pages/administration/adminDashboard';
+import AuthenticationLayout from './components/authentication/AuthLayout';
+import LoginAuthenticate from './pages/authentication/LoginAuthenticate';
+import RegisterAuthenticate from './pages/authentication/RegisterAuthenticate';
+import AdministrationLayout from './components/administration/AdminLayout';
+import AdminOrders from './pages/administration/AdminOrders';
+import AdminProducts from './pages/administration/AdminProducts';
+import AdminDashboard from './pages/administration/AdminDashboard';
 import ShoppingLayout from './components/shopping/shoppingLayout';
 import PageNotFound from './pages/pagenotfound';
-import ShoppingAccount from './pages/shopping/shoppingAccount';
-import ShoppingCheckout from './pages/shopping/shoppingCheckout';
-import ShoppingHome from './pages/shopping/shoppingHome';
-import ShoppingList from './pages/shopping/shoppingList';
-import UnautorizePage from './pages/unauthorizepage/unautorizePage';
+import ShoppingAccount from './pages/shopping/ShoppingAccount';
+import ShoppingCheckout from './pages/shopping/ShoppingCheckout';
+import ShoppingHome from './pages/shopping/ShoppingHome';
+import ShoppingList from './pages/shopping/ShoppingList';
+import UnautorizePage from './pages/unauthorizepage/UnautorizePage';
 import AuthChecker from './components/shared/authChecker';
 
 function App() {

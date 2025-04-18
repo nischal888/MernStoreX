@@ -1,4 +1,4 @@
-import GenericForm from '@/components/shared/genericForm';
+import GenericForm from '@/components/shared/GenericForm';
 import { useState } from 'react';
 import { registerForm } from '@/config';
 import { Link } from 'react-router-dom';

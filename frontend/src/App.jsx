@@ -3,7 +3,7 @@ import './App.css';
 import AuthenticationLayout from './components/authentication/AuthLayout';
 import LoginAuthenticate from './pages/authentication/LoginAuthenticate';
 import RegisterAuthenticate from './pages/authentication/RegisterAuthenticate';
-import AdministrationLayout from './components/administration/AdminLayout';
+import AdminLayout from './components/administration/AdminLayout';
 import AdminOrders from './pages/administration/AdminOrders';
 import AdminProducts from './pages/administration/AdminProducts';
 import AdminDashboard from './pages/administration/AdminDashboard';
@@ -13,7 +13,7 @@ import ShoppingAccount from './pages/shopping/ShoppingAccount';
 import ShoppingCheckout from './pages/shopping/ShoppingCheckout';
 import ShoppingHome from './pages/shopping/ShoppingHome';
 import ShoppingList from './pages/shopping/ShoppingList';
-import UnautorizePage from './pages/unauthorizepage/UnautorizePage';
+import UnauthorizePage from './pages/unauthorizepage';
 import AuthChecker from './components/shared/authChecker';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
           path="/administration"
           element={
             <AuthChecker>
-              <AdministrationLayout />
+              <AdminLayout />
             </AuthChecker>
           }
         >
@@ -56,7 +56,7 @@ function App() {
           <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="account" element={<ShoppingAccount />} />
         </Route>
-        <Route path="/unauthorize-page" element={<UnautorizePage />} />
+        <Route path="/unauthorize-page" element={<UnauthorizePage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

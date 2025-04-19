@@ -25,7 +25,7 @@ function AuthChecker({ isAuthenticated, user, children }) {
   if (
     isAuthenticated &&
     user?.role !== 'ADMIN' &&
-    paramLocation.pathname.includes('admin')
+    paramLocation.pathname.includes('administration')
   ) {
     return <Navigate to="/unauthorize-page" />;
   }

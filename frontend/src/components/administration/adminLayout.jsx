@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import AdminSideNavigation from './adminSidenav';
-import AdminHeader from './adminHeader';
+import AdminSideNavigation from './AdminSidenav';
+import AdminHeader from './AdminHeader';
 
-function AdministrationLayout() {
+function AdminLayout() {
   return (
     <div className="flex min-h-screen w-ful">
       <AdminSideNavigation />
@@ -16,4 +16,4 @@ function AdministrationLayout() {
   );
 }
 
-export default AdministrationLayout;
+export default AdminLayout;

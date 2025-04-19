@@ -11,6 +11,12 @@ import {
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 
+const types = {
+ INPUT : 'input',
+ SELECT : 'select',
+ TEXTAREA : 'textarea'
+}
+
 function GenericForm({
   formElements,
   formData,
@@ -22,9 +28,11 @@ function GenericForm({
   function renderInputsByComponentType(getControlItem) {
     let element = null;
     const value = formData[getControlItem.name] || '';
+    console.log('getControlItem',getControlItem)
+    console.log('formData',formData)
 
     switch (getControlItem.componentType) {
-      case 'input':
+      case types.INPUT:
         element = (
           <Input
             name={getControlItem.name}
@@ -42,7 +50,7 @@ function GenericForm({
         );
 
         break;
-      case 'select':
+      case types.SELECT:
         element = (
           <Select
             onValueChange={(value) =>
@@ -69,7 +77,7 @@ function GenericForm({
         );
 
         break;
-      case 'textarea':
+      case types.TEXTAREA:
         element = (
           <Textarea
             name={getControlItem.name}

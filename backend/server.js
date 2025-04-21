@@ -11,7 +11,7 @@ mongoose
   .then(() => console.log('DB Connected'))
   .catch((error) => console.log(error));
 const app = express();
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 8000;
 
 app.use(
   cors({
@@ -30,5 +30,5 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
-app.use('/api', router)
+app.use('/api/authenticate', router)
 app.listen(PORT, () => console.log(`Server is now running in port ${PORT}`));

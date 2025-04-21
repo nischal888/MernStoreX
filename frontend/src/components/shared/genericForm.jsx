@@ -28,8 +28,7 @@ function GenericForm({
   function renderInputsByComponentType(getControlItem) {
     let element = null;
     const value = formData[getControlItem.name] || '';
-    console.log('getControlItem',getControlItem)
-    console.log('formData',formData)
+    
 
     switch (getControlItem.componentType) {
       case types.INPUT:

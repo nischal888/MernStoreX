@@ -1,18 +1,38 @@
 import GenericForm from '@/components/shared/GenericForm';
 import { useState } from 'react';
 import { registerForm } from '@/config';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {userRegistration} from '../../store/authenticationSlice'
+import { useToast } from "@/hooks/use-toast"
 
 const initialState = {
-  usrName: '',
+  userName: '',
   email: '',
   password: '',
 };
 
 const RegisterAuthenticate = () => {
   const [formData, setFormData] = useState(initialState);
-  function onSubmit() {
-    console.log('got it');
+  const dispatch = useDispatch();
+  const navigate =  useNavigate();
+  const {toast} = useToast();
+  function onSubmit(e) {
+    e.preventDefault()
+    dispatch(userRegistration(formData)).then((data)=> {
+      if(data?.payload?.success){
+        toast({
+          title:data?.payload?.message
+        })
+         navigate('/authenticate/login')
+        }else{
+          toast({
+            title:data?.payload?.message,
+            variant: "destructive",
+          })
+        }
+    })
+   
   }
   return (
     <div className="mx-auto w-full max-w-md space-y-6">

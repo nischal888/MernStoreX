@@ -1,20 +1,20 @@
 export const registerForm = [
   {
-    name: 'usrName',
+    name: 'userName',
     label: 'User Name',
     placeholder: 'Enter your user name',
     componentType: 'input',
     type: 'text',
   },
   {
-    name: 'usrEmail',
+    name: 'email',
     label: 'Email',
     placeholder: 'Enter your email',
     componentType: 'input',
     type: 'email',
   },
   {
-    name: 'usrPassword',
+    name: 'password',
     label: 'Password',
     placeholder: 'Enter your password',
     componentType: 'input',

@@ -1,39 +1,40 @@
-export const registerForm = [
-  {
-    name: 'userName',
-    label: 'User Name',
-    placeholder: 'Enter your user name',
-    componentType: 'input',
-    type: 'text',
-  },
-  {
-    name: 'email',
-    label: 'Email',
-    placeholder: 'Enter your email',
-    componentType: 'input',
-    type: 'email',
-  },
-  {
-    name: 'password',
-    label: 'Password',
-    placeholder: 'Enter your password',
-    componentType: 'input',
-    type: 'password',
-  },
+import { FormElement } from '../types/form';
+export const registerForm: FormElement[] = [
+	{
+		name: 'userName',
+		label: 'User Name',
+		placeholder: 'Enter your user name',
+		componentType: 'input',
+		type: 'text',
+	},
+	{
+		name: 'email',
+		label: 'Email',
+		placeholder: 'Enter your email',
+		componentType: 'input',
+		type: 'email',
+	},
+	{
+		name: 'password',
+		label: 'Password',
+		placeholder: 'Enter your password',
+		componentType: 'input',
+		type: 'password',
+	},
 ];
-export const loginForm = [
-  {
-    name: 'email',
-    label: 'Email',
-    placeholder: 'Enter your email',
-    componentType: 'input',
-    type: 'email',
-  },
-  {
-    name: 'password',
-    label: 'Password',
-    placeholder: 'Enter your password',
-    componentType: 'input',
-    type: 'password',
-  },
+export const loginForm: FormElement[] = [
+	{
+		name: 'email',
+		label: 'Email',
+		placeholder: 'Enter your email',
+		componentType: 'input',
+		type: 'email',
+	},
+	{
+		name: 'password',
+		label: 'Password',
+		placeholder: 'Enter your password',
+		componentType: 'input',
+		type: 'password',
+	},
 ];

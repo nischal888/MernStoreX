@@ -1,6 +1,17 @@
+import { ReactNode } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { User } from '../../types/User';
+interface AuthenticationCheckerProps {
+	isAuthenticated: boolean;
+	user: User | null;
+	children?: ReactNode;
+}
 
-function AuthenticationChecker({ isAuthenticated, user, children }) {
+const AuthenticationChecker = ({
+	isAuthenticated,
+	user,
+	children,
+}: AuthenticationCheckerProps) => {
 	const paramLocation = useLocation();
 	if (
 		!isAuthenticated &&
@@ -37,6 +48,6 @@ function AuthenticationChecker({ isAuthenticated, user, children }) {
 		return <Navigate to="/administration/dashboard" />;
 	}
 	return <>{children}</>;
-}
+};
 
 export default AuthenticationChecker;

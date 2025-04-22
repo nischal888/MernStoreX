@@ -16,9 +16,12 @@ import ShoppingList from './pages/shopping/ShoppingList';
 import UnauthorizePage from './pages/unauthorizepage';
 import AuthenticationChecker from './components/shared/authenticationChecker';
 import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
 function App() {
-	const { user, isAuthenticated } = useSelector((state) => state.authenticate);
+	const { user, isAuthenticated } = useSelector(
+		(state: RootState) => state.authenticate
+	);
 	return (
 		<div className="flex flex-col overflow-hidden bg-white">
 			<Routes>
@@ -28,7 +31,7 @@ function App() {
 						<AuthenticationChecker
 							isAuthenticated={isAuthenticated}
 							user={user}
-						></AuthenticationChecker>
+						/>
 					}
 				/>
 				<Route

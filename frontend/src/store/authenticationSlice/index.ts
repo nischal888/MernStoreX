@@ -41,6 +41,23 @@ export const userLogin = createAsyncThunk<LoginResponse, LoginFormData>(
 	}
 );
 
+export const checkAuthStatus = createAsyncThunk(
+	'/authenticate/status',
+	async (formData) => {
+		const response = await axios.get(
+			'http://localhost:8000/api/authenticate/status',
+
+			{
+				withCredentials: true,
+				headers: {
+					'Cache-Control': 'no-store,no-cache,must-revalidate,proxy-revalidate',
+				},
+			}
+		);
+		return response.data;
+	}
+);
+
 const authenticateSlice = createSlice({
 	name: 'auth',
 	initialState,
@@ -67,10 +84,23 @@ const authenticateSlice = createSlice({
 			})
 			.addCase(userLogin.fulfilled, (state, action) => {
 				state.isLoading = false;
-				state.user = action.payload.user;
-				state.isAuthenticated = true;
+				state.user = action.payload.success ? action.payload.user : null;
+				state.isAuthenticated = action.payload.success;
 			})
 			.addCase(userLogin.rejected, (state) => {
+				state.isLoading = true;
+				state.user = null;
+				state.isAuthenticated = false;
+			})
+			.addCase(checkAuthStatus.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(checkAuthStatus.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.user = action.payload.success ? action.payload.user : null;
+				state.isAuthenticated = action.payload.success;
+			})
+			.addCase(checkAuthStatus.rejected, (state) => {
 				state.isLoading = true;
 				state.user = null;
 				state.isAuthenticated = false;

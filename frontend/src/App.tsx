@@ -17,11 +17,20 @@ import UnauthorizePage from './pages/unauthorizepage';
 import AuthenticationChecker from './components/shared/authenticationChecker';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { checkAuthStatus } from '@/store/authenticationSlice';
+import type { AppDispatch } from '@/store/store';
 
 function App() {
 	const { user, isAuthenticated } = useSelector(
 		(state: RootState) => state.authenticate
 	);
+	const dispatch = useDispatch<AppDispatch>();
+
+	useEffect(() => {
+		dispatch(checkAuthStatus());
+	}, []);
 	return (
 		<div className="flex flex-col overflow-hidden bg-white">
 			<Routes>

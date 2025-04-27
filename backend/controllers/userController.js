@@ -48,7 +48,7 @@ const loginUser = async (req, res) => {
 				email: checkUser.email,
 			},
 			'CLIENT_SECRET_KEY',
-			{ expiresIn: '60m' }
+			{ expiresIn: '600m' }
 		);
 		res.cookie('token', token, { httpOnly: true, secure: false }).json({
 			success: true,
@@ -67,4 +67,35 @@ const loginUser = async (req, res) => {
 	}
 };
 
-module.exports = { registerUser, loginUser };
+const logOutUser = (req, res) => {
+	res.clearCookie('token').json({
+		success: true,
+		message: 'Logout Successfull',
+	});
+};
+
+const authenicationMiddleware = (req, res, next) => {
+	const token = req.cookies.token;
+	if (!token)
+		return res.status(401).json({
+			success: false,
+			message: 'Unauthorize user',
+		});
+	try {
+		const decode = jwt.verify(token, 'CLIENT_SECRET_KEY');
+		req.user = decode;
+		next();
+	} catch (e) {
+		res.status(401).json({
+			success: false,
+			message: 'Unauthorize user',
+		});
+	}
+};
+
+module.exports = {
+	registerUser,
+	loginUser,
+	logOutUser,
+	authenicationMiddleware,
+};

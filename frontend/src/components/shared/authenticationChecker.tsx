@@ -1,18 +1,16 @@
 import { ReactNode } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { User } from '../../types/User';
+import { useAuthentication } from '@/hooks/useAuthentication';
 interface AuthenticationCheckerProps {
-	isAuthenticated: boolean;
-	user: User | null;
 	children?: ReactNode;
 }
 
-const AuthenticationChecker = ({
-	isAuthenticated,
-	user,
-	children,
-}: AuthenticationCheckerProps) => {
+const AuthenticationChecker = ({ children }: AuthenticationCheckerProps) => {
+	const { isAuthenticated, user, isLoading } = useAuthentication();
 	const paramLocation = useLocation();
+	if (isLoading) return <div>Loading...</div>;
+
 	if (
 		!isAuthenticated &&
 		!(

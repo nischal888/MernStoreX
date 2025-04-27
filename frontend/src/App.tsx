@@ -23,33 +23,20 @@ import { checkAuthStatus } from '@/store/authenticationSlice';
 import type { AppDispatch } from '@/store/store';
 
 function App() {
-	const { user, isAuthenticated } = useSelector(
-		(state: RootState) => state.authenticate
-	);
 	const dispatch = useDispatch<AppDispatch>();
 
 	useEffect(() => {
 		dispatch(checkAuthStatus());
-	}, []);
+	}, [dispatch]);
+
 	return (
 		<div className="flex flex-col overflow-hidden bg-white">
 			<Routes>
-				<Route
-					path="/"
-					element={
-						<AuthenticationChecker
-							isAuthenticated={isAuthenticated}
-							user={user}
-						/>
-					}
-				/>
+				<Route path="/" element={<AuthenticationChecker />} />
 				<Route
 					path="/authenticate"
 					element={
-						<AuthenticationChecker
-							isAuthenticated={isAuthenticated}
-							user={user}
-						>
+						<AuthenticationChecker>
 							<AuthenticationLayout />
 						</AuthenticationChecker>
 					}
@@ -60,10 +47,7 @@ function App() {
 				<Route
 					path="/administration"
 					element={
-						<AuthenticationChecker
-							isAuthenticated={isAuthenticated}
-							user={user}
-						>
+						<AuthenticationChecker>
 							<AdminLayout />
 						</AuthenticationChecker>
 					}
@@ -75,10 +59,7 @@ function App() {
 				<Route
 					path="/shop"
 					element={
-						<AuthenticationChecker
-							isAuthenticated={isAuthenticated}
-							user={user}
-						>
+						<AuthenticationChecker>
 							<ShoppingLayout />
 						</AuthenticationChecker>
 					}

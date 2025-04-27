@@ -10,7 +10,7 @@ import {
 
 const initialState: AuthState = {
 	isAuthenticated: false,
-	isLoading: false,
+	isLoading: true,
 	user: null,
 };
 

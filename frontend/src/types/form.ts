@@ -8,7 +8,7 @@ export interface FormOption {
 export interface BaseFormElement {
 	name: string;
 	label: string;
-	placeholder: string;
+	placeholder?: string;
 	componentType: ComponentType;
 }
 

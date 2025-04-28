@@ -1,10 +1,10 @@
-const express = require('express');
-const {
+import express from 'express';
+import {
 	registerUser,
 	loginUser,
 	logOutUser,
 	authenicationMiddleware,
-} = require('../controllers/userController');
+} from '../controllers/userController.js';
 
 const router = express.Router();
 
@@ -19,4 +19,4 @@ router.get('/status', authenicationMiddleware, (req, res) => {
 		user,
 	});
 });
-module.exports = router;
+export default router;

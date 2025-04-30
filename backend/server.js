@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import router from './routes/userRoutes.js'; // <-- notice .js extension
+import router from './routes/userRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 mongoose

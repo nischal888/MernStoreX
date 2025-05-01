@@ -1,9 +1,16 @@
 import { Button } from '../ui/button';
 import { Dispatch, SetStateAction } from 'react';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '@/store/authenticationSlice';
 interface AdminHeaderProps {
 	setToggle: Dispatch<SetStateAction<boolean>>;
 }
 function AdminHeader({ setToggle }: AdminHeaderProps) {
+	const dispatch = useDispatch();
+
+	function handleLogout() {
+		dispatch(logoutUser());
+	}
 	return (
 		<header className="flex items-center justify-between px-4 py-3 bg-background border-b">
 			<Button onClick={() => setToggle(true)} className="lg:hidden sm:block">
@@ -25,7 +32,10 @@ function AdminHeader({ setToggle }: AdminHeaderProps) {
 				<span className="sr-only">Toggle Menu</span>
 			</Button>
 			<div className="flex flex-1 justify-end">
-				<Button className="inline-flex gap-2 items-center rounded-md px-4 py-2 text-sm font-medium shadow">
+				<Button
+					onClick={handleLogout}
+					className="inline-flex gap-2 items-center rounded-md px-4 py-2 text-sm font-medium shadow"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

@@ -1,4 +1,5 @@
 import { imageUploadUtil } from '../helpers/cloudinay.js';
+import Product from '../models/Products.js';
 
 const handleImageUpload = async (req, res) => {
 	try {

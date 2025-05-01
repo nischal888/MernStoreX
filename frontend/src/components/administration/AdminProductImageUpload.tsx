@@ -83,7 +83,7 @@ function AdminProductImageUpload({
 				} border-2 border-dashed rounded-lg p-4`}
 			>
 				<Input
-					id="upload-image"
+					id="image-upload"
 					type="file"
 					className="hidden"
 					ref={inputRef}

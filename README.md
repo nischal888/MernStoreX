@@ -1,7 +1,7 @@
 
-# MernStoreX
+# mern-ecommerce-demo
 
-MernStoreX is a full-stack e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced with TypeScript, Tailwind CSS, and Redux for robust state management. It provides a complete online shopping experience, including user authentication, product browsing, shopping cart functionality, order processing, and an administrative interface for managing the store.
+A full-stack e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced with TypeScript, Tailwind CSS, and Redux for robust state management. It provides a complete online shopping experience, including user authentication, product browsing, shopping cart functionality, order processing, and an administrative interface for managing the store.
 
 
 ## Table of Contents

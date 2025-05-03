@@ -66,8 +66,8 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/MernStoreX.git
-    cd MernStoreX
+    git clone https://github.com/your-username/mern-ecommerce-demo.git
+    cd mern-ecommerce-demo
     ```
 
 2.  **Install Backend Dependencies:**

@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import router from './routes/userRoutes.js';
 import productRoutes from './routes/productsRoutes.js';
+import shopProductRoutes from './routes/shopRoutes.js';
+import cartRouter from './routes/cartRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 mongoose
@@ -32,4 +34,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/api/authenticate', router);
 app.use('/api/administration/products', productRoutes);
+app.use('/api/shop/products', shopProductRoutes);
+app.use('/api/shop/cart', cartRouter);
 app.listen(PORT, () => console.log(`Server is now running in port ${PORT}`));

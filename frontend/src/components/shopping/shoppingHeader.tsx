@@ -22,6 +22,7 @@ import { Button } from '../ui/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { shoppingViewHeaderNavigation } from '@/config';
 import { fetchCartItems } from '@/store/cartSlice';
+import UserCartWrapper from '@/components/shopping/cartWrapper';
 import { Label } from '../ui/label';
 
 function ShopNavigation() {
@@ -54,7 +55,7 @@ function ShopNavigation() {
 			{shoppingViewHeaderNavigation.map((navItem) => (
 				<Label
 					onClick={() => handleNavigate(navItem)}
-					className="text-sm font-medium cursor-pointer"
+					className="text-sm font-normal cursor-pointer"
 					key={navItem.id}
 				>
 					{navItem.label}
@@ -88,25 +89,25 @@ function HeaderRightContent() {
 					className="relative"
 				>
 					<ShoppingCart className="w-6 h-6" />
-					<span className="absolute top-[-5px] right-[2px] font-bold text-sm">
+					<span className="absolute top-[-5px] right-[2px] font-medium text-sm">
 						{cartItems?.items?.length || 0}
 					</span>
 					<span className="sr-only">User cart</span>
 				</Button>
-				{/* <UserCartWrapper
+				<UserCartWrapper
 					setOpenCartSheet={setOpenCartSheet}
 					cartItems={
 						cartItems && cartItems.items && cartItems.items.length > 0
 							? cartItems.items
 							: []
 					}
-				/> */}
+				/>
 			</Sheet>
 
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
 					<Avatar className="bg-black">
-						<AvatarFallback className="bg-black text-white font-extrabold">
+						<AvatarFallback className="bg-black text-white font-medium">
 							{user?.userName[0].toUpperCase()}
 						</AvatarFallback>
 					</Avatar>
@@ -134,8 +135,7 @@ function shoppingHeader() {
 		<header className="sticky top-0 z-40 w-full border-b bg-background">
 			<div className="flex h-16 items-center justify-between px-4 md:px-6">
 				<Link to="/shop/home" className="flex items-center gap-2">
-					<HousePlug className="h-6 w-6" />
-					<span className="font-bold">Ecommerce</span>
+					<span className="font-bold text-xl">Mern</span>
 				</Link>
 				<Sheet>
 					<SheetTrigger asChild>

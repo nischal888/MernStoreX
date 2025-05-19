@@ -19,7 +19,7 @@ function AdminProductTile({
 					/>
 				</div>
 				<CardContent>
-					<h2 className="text-xl font-bold mb-2 mt-2">{product?.title}</h2>
+					<h2 className="text-xl font-medium mb-2 mt-2">{product?.title}</h2>
 					<div className="flex justify-between items-center mb-2">
 						<span
 							className={`${
@@ -29,7 +29,7 @@ function AdminProductTile({
 							${product?.price}
 						</span>
 						{product?.salePrice > 0 ? (
-							<span className="text-lg font-bold">${product?.salePrice}</span>
+							<span className="text-lg font-medium">${product?.salePrice}</span>
 						) : null}
 					</div>
 				</CardContent>

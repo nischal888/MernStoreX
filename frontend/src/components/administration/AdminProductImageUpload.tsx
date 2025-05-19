@@ -107,7 +107,7 @@ function AdminProductImageUpload({
 						<div className="flex items-center">
 							<FileIcon className="w-8 text-primary mr-2 h-8" />
 						</div>
-						<p className="text-sm font-medium">{imageFile.name}</p>
+						<p className="text-sm font-normal">{imageFile.name}</p>
 						<Button
 							variant="ghost"
 							size="icon"

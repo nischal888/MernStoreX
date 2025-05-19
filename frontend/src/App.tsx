@@ -30,7 +30,7 @@ function App() {
 	}, [dispatch]);
 
 	return (
-		<div className="flex flex-col overflow-hidden bg-white">
+		<div className="flex flex-col overflow-hidden bg-white max-w-[1440px]">
 			<Routes>
 				<Route path="/" element={<AuthenticationChecker />} />
 				<Route

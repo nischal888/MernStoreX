@@ -1,7 +1,7 @@
 
-# MernStoreX
+# mern-ecommerce-demo
 
-MernStoreX is a full-stack e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced with TypeScript, Tailwind CSS, and Redux for robust state management. It provides a complete online shopping experience, including user authentication, product browsing, shopping cart functionality, order processing, and an administrative interface for managing the store.
+A full-stack e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced with TypeScript, Tailwind CSS, and Redux for robust state management. It provides a complete online shopping experience, including user authentication, product browsing, shopping cart functionality, order processing, and an administrative interface for managing the store.
 
 
 ## Table of Contents
@@ -66,8 +66,8 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/MernStoreX.git
-    cd MernStoreX
+    git clone https://github.com/your-username/mern-ecommerce-demo.git
+    cd mern-ecommerce-demo
     ```
 
 2.  **Install Backend Dependencies:**
